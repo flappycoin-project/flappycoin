@@ -596,11 +596,11 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
                               enum GetMinFee_mode mode) const
 {
     // Base fee is either nMinTxFee or nMinRelayTxFee
-    int64 nBaseFee = (mode == GMF_RELAY) ? nMinRelayTxFee : nMinTxFee;
+        int64 nBaseFee = (mode == GMF_RELAY) ? nMinRelayTxFee : nMinTxFee;
 
     unsigned int nBytes = ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
     unsigned int nNewBlockSize = nBlockSize + nBytes;
-    int64 nMinFee = (1 + (int64)nBytes / 1000) * nBaseFee;
+    int64 nMinFee = (1 + (int64)nBytes * 100) * nBaseFee;
 
     if (fAllowFree)
     {
@@ -608,17 +608,17 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
         // * If we are relaying we allow transactions up to DEFAULT_BLOCK_PRIORITY_SIZE - 1000
         //   to be considered to fall into this category. We don't want to encourage sending
         //   multiple transactions instead of one big transaction to avoid fees.
-        // * If we are creating a transaction we allow transactions up to 5,000 bytes
+        // * If we are creating a transaction we allow transactions up to 250 bytes
         //   to be considered safe and assume they can likely make it into this section.
-        if (nBytes < (mode == GMF_SEND ? 5000 : (DEFAULT_BLOCK_PRIORITY_SIZE - 1000)))
-            nMinFee = 0;
+        if (nBytes < (mode == GMF_SEND ? 250 : (DEFAULT_BLOCK_PRIORITY_SIZE - 1000)))
+           nMinFee = (1 + (int64)nBytes * 25) * nBaseFee;
     }
 
     // Flappycoin
     // To limit dust spam, add nBaseFee for each output less than DUST_SOFT_LIMIT
     BOOST_FOREACH(const CTxOut& txout, vout)
         if (txout.nValue < DUST_SOFT_LIMIT)
-            nMinFee += nBaseFee;
+            nMinFee += (1 + (int64)nBytes * 10) * nBaseFee;
 
     // Raise the price as the block approaches full
     if (nBlockSize != 1 && nNewBlockSize >= MAX_BLOCK_SIZE_GEN/2)
@@ -1096,7 +1096,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
         rand1 = generateMTRandom(seed, 99999);
         nSubsidy = (1 + rand1) * COIN;
     }
-    else if(nHeight < 400000)
+    else if(nHeight < 300000)
     {
         cseed_str = prevHash.ToString().substr(6,7);
         cseed = cseed_str.c_str();
@@ -1104,7 +1104,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
         rand2 = generateMTRandom(seed, 49999);
         nSubsidy = (1 + rand2) * COIN;
     }
-    else if(nHeight < 800000)
+    else if(nHeight < 400000)
     {
         cseed_str = prevHash.ToString().substr(7,7);
         cseed = cseed_str.c_str();
@@ -1112,7 +1112,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
         rand3 = generateMTRandom(seed, 24999);
         nSubsidy = (1 + rand3) * COIN;
     }
-    else if(nHeight < 1000000)
+    else if(nHeight < 500000)
     {
         cseed_str = prevHash.ToString().substr(7,7);
         cseed = cseed_str.c_str();
@@ -1120,7 +1120,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
         rand4 = generateMTRandom(seed, 12499);
         nSubsidy = (1 + rand4) * COIN;
     }
-    else if(nHeight < 1200000)
+    else if(nHeight < 600000)
     {
         cseed_str = prevHash.ToString().substr(6,7);
         cseed = cseed_str.c_str();

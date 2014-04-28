@@ -637,11 +637,12 @@ int CWalletTx::GetRequestCount() const
 void CWalletTx::GetAmounts(list<pair<CTxDestination, int64> >& listReceived,
                            list<pair<CTxDestination, int64> >& listSent, int64& nFee, string& strSentAccount) const
 {
-    nFee = 0;
     listReceived.clear();
     listSent.clear();
     strSentAccount = strFromAccount;
 
+    nFee = 0;
+    
     // Compute fee:
     int64 nDebit = GetDebit();
     if (nDebit > 0) // debit>0 means we signed/sent this transaction

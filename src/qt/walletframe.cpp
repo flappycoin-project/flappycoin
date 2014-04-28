@@ -9,7 +9,7 @@
 #include "walletstack.h"
 #include "walletview.h"
 
-#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QMessageBox>
 #include <QLabel>
 
@@ -19,12 +19,18 @@ WalletFrame::WalletFrame(BitcoinGUI *_gui) :
     clientModel(0)
 {
     // Leave HBox hook for adding a list view later
-    QHBoxLayout *walletFrameLayout = new QHBoxLayout(this);
+    QVBoxLayout *walletFrameLayout = new QVBoxLayout(this);
     setContentsMargins(0,0,0,0);
     walletStack = new WalletStack(this);
     walletStack->setBitcoinGUI(gui);
     walletFrameLayout->setContentsMargins(0,0,0,0);
+    walletFrameLayout->setSpacing(0);
     walletFrameLayout->addWidget(walletStack);
+
+    QFrame *footerFrame = new QFrame(this);
+    footerFrame->setMinimumHeight(40);
+    footerFrame->setStyleSheet("background-image: url(:/images/res/images/footer.png); border: none;");
+    walletFrameLayout->addWidget(footerFrame);
 
     QLabel *noWallet = new QLabel(tr("No wallet has been loaded."));
     noWallet->setAlignment(Qt::AlignCenter);
@@ -158,4 +164,3 @@ WalletView *WalletFrame::currentWalletView()
 {
     return qobject_cast<WalletView*>(walletStack->currentWidget());
 }
-
