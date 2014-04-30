@@ -14,8 +14,6 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(MBTC);
     unitlist.append(kBTC);
     unitlist.append(BTC);
-    unitlist.append(mBTC);
-    unitlist.append(uBTC);
     return unitlist;
 }
 
@@ -26,8 +24,6 @@ bool BitcoinUnits::valid(int unit)
     case MBTC:
     case kBTC:
     case BTC:
-    case mBTC:
-    case uBTC:
         return true;
     default:
         return false;
@@ -41,8 +37,6 @@ QString BitcoinUnits::name(int unit)
     case MBTC: return QString("MFLAP");
     case kBTC: return QString("kFLAP");
     case BTC: return QString("FLAP");
-    case mBTC: return QString("mFLAP");
-    case uBTC: return QString::fromUtf8("μFLAP");
     default: return QString("???");
     }
 }
@@ -54,8 +48,6 @@ QString BitcoinUnits::description(int unit)
     case MBTC: return QString("Million-Flappycoins (1 * 1,000,000)");            
     case kBTC: return QString("Thousand-Flappycoins (1 * 1,000)"); 
     case BTC: return QString("Flappycoins");
-    case mBTC: return QString("Milli-Flappycoins (1 / 1,000)");
-    case uBTC: return QString("Micro-Flappycoins (1 / 1,000,000)");
     default: return QString("???");
     }
 }
@@ -67,8 +59,6 @@ qint64 BitcoinUnits::factor(int unit)
     case MBTC:  return 100000000000000;
     case kBTC:  return 100000000000;    
     case BTC:  return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
     default:   return 100000000;
     }
 }
@@ -80,8 +70,6 @@ int BitcoinUnits::amountDigits(int unit)
     case MBTC: return 2; // 21 (# digits, without commas)
     case kBTC: return 5; // 21,000 (# digits, without commas)
     case BTC: return 8; // 21,000,000 (# digits, without commas)
-    case mBTC: return 11; // 21,000,000,000
-    case uBTC: return 14; // 21,000,000,000,000
     default: return 0;
     }
 }
@@ -93,8 +81,6 @@ int BitcoinUnits::decimals(int unit)
     case MBTC: return 14;
     case kBTC: return 11;
     case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
     default: return 0;
     }
 }
