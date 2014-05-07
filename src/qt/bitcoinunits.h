@@ -22,8 +22,6 @@ public:
         MBTC,
         kBTC,
         BTC,
-        mBTC,
-        uBTC
     };
 
     //! @name Static API
