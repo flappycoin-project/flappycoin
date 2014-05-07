@@ -67,9 +67,9 @@ int BitcoinUnits::amountDigits(int unit)
 {
     switch(unit)
     {
-    case MBTC: return 3; // 210 (# digits, without commas)
-    case kBTC: return 6; // 210,000 (# digits, without commas)
-    case BTC: return 9; // 210,000,000 (# digits, without commas)
+    case MBTC: return 2; // 210 (# digits, without commas)
+    case kBTC: return 5; // 210,000 (# digits, without commas)
+    case BTC: return 8; // 210,000,000 (# digits, without commas)
     default: return 0;
     }
 }
