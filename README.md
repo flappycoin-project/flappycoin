@@ -2,7 +2,7 @@ Flappycoin
 ================================
 FLAPPYCOIN FORKED SOURCE CODE. CHANGES BELOW.
 
-Current version: 3.0.0.1
+Current version: 3.1.0.0
 
 DOMAIN: http://flappycoin.biz
 
@@ -35,15 +35,19 @@ Rewards:
 ---------------
 Block 1-110,000: 0-1,000,000 Reward
 
-Block 110,001 — 200,000: 0-100,000 Reward
+Block 110,001 — 140,000: 0-100,000 Reward
 
-Block 200,001 — 300,000: 0-50,000 Reward
+Block 140,001 — 140,500: 0-1,000,000 Reward
 
-Block 300,001 — 400,000: 0-25,000 Reward
+Block 140,001 — 200,000: 100,000 Reward
 
-Block 400,001 — 500,000: 0-12,500 Reward
+Block 200,001 — 300,000: 50,000 Reward
 
-Block 500,001 - 600,000: 0-6,250 Reward
+Block 300,001 — 400,000: 25,000 Reward
+
+Block 400,001 — 500,000: 12,500 Reward
+
+Block 500,001 - 600,000: 6,250 Reward
 
 Block 600,000+: 50 + Transaction Fees Reward
 
