@@ -54,7 +54,6 @@ Download Links:
 ----------------
 
 http://flappycoin.biz/download/FlappyCoin-Windows.zip
-
 http://flappycoin.biz/download/FlappyCoin-MacOSX.dmg
 
 License
