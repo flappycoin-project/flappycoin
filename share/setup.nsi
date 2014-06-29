@@ -1,4 +1,4 @@
-Name Flappycoin
+Name FlappyCoin
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 3.2
-!define COMPANY "Flappycoin project"
-!define URL http://www.flappycoin.org/
+!define COMPANY "FlappyCoin"
+!define URL http://flappycoin.biz/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
@@ -46,13 +46,13 @@ Var StartMenuGroup
 
 # Installer attributes
 OutFile flappycoin-3.2-win32-setup.exe
-InstallDir $PROGRAMFILES\Flappycoin
+InstallDir $PROGRAMFILES\FlappyCoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion 0.8.6.2
-VIAddVersionKey ProductName Flappycoin
+VIAddVersionKey ProductName FlappyCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -87,7 +87,7 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Flappycoin.lnk" $INSTDIR\flappycoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\FlappyCoin.lnk" $INSTDIR\flappycoin-qt.exe
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Flappycoin.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -99,7 +99,7 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "flappycoin" "URL Protocol" ""
-    WriteRegStr HKCR "flappycoin" "" "URL:Flappycoin"
+    WriteRegStr HKCR "flappycoin" "" "URL:FlappyCoin"
     WriteRegStr HKCR "flappycoin\DefaultIcon" "" $INSTDIR\flappycoin-qt.exe
     WriteRegStr HKCR "flappycoin\shell\open\command" "" '"$INSTDIR\flappycoin-qt.exe" "%1"'
 SectionEnd
@@ -129,9 +129,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall Flappycoin.lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Flappycoin.lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Flappycoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall FlappyCoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\FlappyCoin.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\FlappyCoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
