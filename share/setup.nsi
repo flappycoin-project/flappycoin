@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.6.2
+!define VERSION 3.2
 !define COMPANY "Flappycoin project"
 !define URL http://www.flappycoin.org/
 
