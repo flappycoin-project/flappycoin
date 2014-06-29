@@ -53,8 +53,7 @@ Block 600,000+: 50 + Transaction Fees Reward
 Download Links:
 ----------------
 
-http://flappycoin.biz/download/FlappyCoin-Windows.zip
-http://flappycoin.biz/download/FlappyCoin-MacOSX.dmg
+http://flappycoin.biz
 
 License
 -------
