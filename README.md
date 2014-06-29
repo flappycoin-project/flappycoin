@@ -2,7 +2,7 @@ Flappycoin
 ================================
 FLAPPYCOIN FORKED SOURCE CODE. CHANGES BELOW.
 
-Current version: 3.1.0.0
+Current version: 3.2
 
 DOMAIN: http://flappycoin.biz
 
@@ -14,9 +14,7 @@ http://flappycoin.info - Old domain. Points to above domain but official domain 
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
-Copyright (c) 2014 Flappycoin Developers
-
-Copyright (c) 2014 Flappycoin Saviors
+Copyright (c) 2014 FlappyCoin Developers
 
 Specifications:
 ---------------
@@ -55,8 +53,9 @@ Block 600,000+: 50 + Transaction Fees Reward
 Download Links:
 ----------------
 
-Windows 3.0.0.0: http://flappycoin.biz/download/FlappyCoin-Windows.zip
-Mac OSX 3.0.0.0: http://flappycoin.biz/download/FlappyCoin-MacOSX.dmg
+http://flappycoin.biz/download/FlappyCoin-Windows.zip
+
+http://flappycoin.biz/download/FlappyCoin-MacOSX.dmg
 
 License
 -------
