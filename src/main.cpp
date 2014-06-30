@@ -600,8 +600,8 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
 
     unsigned int nBytes = ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
     unsigned int nNewBlockSize = nBlockSize + nBytes;
-    int64 nMinFee = (1 + (int64)nBytes * 100) * nBaseFee;
-
+  //  int64 nMinFee = (1 + (int64)nBytes * 100) * nBaseFee;
+    int64 nMinFee = 0;
     if (fAllowFree)
     {
         // There is a free transaction area in blocks created by most miners,
@@ -627,11 +627,13 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
     {
         if (nNewBlockSize >= MAX_BLOCK_SIZE_GEN)
             return MAX_MONEY;
-        nMinFee *= MAX_BLOCK_SIZE_GEN / (MAX_BLOCK_SIZE_GEN - nNewBlockSize);
+      //  nMinFee *= MAX_BLOCK_SIZE_GEN / (MAX_BLOCK_SIZE_GEN - nNewBlockSize);
+      nMinFee = 0;
     }
 
     if (!MoneyRange(nMinFee))
-        nMinFee = MAX_MONEY;
+      //  nMinFee = MAX_MONEY;
+      nMinFee = 0;
     return nMinFee;
 }
 
