@@ -600,8 +600,8 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
 
     unsigned int nBytes = ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION);
     unsigned int nNewBlockSize = nBlockSize + nBytes;
-  //  int64 nMinFee = (1 + (int64)nBytes * 100) * nBaseFee;
-    int64 nMinFee = 0;
+    int64 nMinFee = (1 + (int64)nBytes * 100) * nBaseFee;
+   
     if (fAllowFree)
     {
         // There is a free transaction area in blocks created by most miners,
@@ -611,24 +611,24 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
         // * If we are creating a transaction we allow transactions up to 250 bytes
         //   to be considered safe and assume they can likely make it into this section.
         if (nBytes < (mode == GMF_SEND ? 250 : (DEFAULT_BLOCK_PRIORITY_SIZE - 1000)))
-        //   nMinFee = (1 + (int64)nBytes * 15) * nBaseFee;
-        nMinFee = 0;
+           nMinFee = (1 + (int64)nBytes * 15) * nBaseFee;
+        
     }
 
     // Flappycoin
     // To limit dust spam, add nBaseFee for each output less than DUST_SOFT_LIMIT
     BOOST_FOREACH(const CTxOut& txout, vout)
         if (txout.nValue < DUST_SOFT_LIMIT)
-          //  nMinFee += (1 + (int64)nBytes * 10) * nBaseFee;
-          nMinFee = 0;
+            nMinFee += (1 + (int64)nBytes * 10) * nBaseFee;
+        
 
     // Raise the price as the block approaches full
     if (nBlockSize != 1 && nNewBlockSize >= MAX_BLOCK_SIZE_GEN/2)
     {
         if (nNewBlockSize >= MAX_BLOCK_SIZE_GEN)
             return MAX_MONEY;
-      //  nMinFee *= MAX_BLOCK_SIZE_GEN / (MAX_BLOCK_SIZE_GEN - nNewBlockSize);
-      nMinFee = 0;
+        nMinFee *= MAX_BLOCK_SIZE_GEN / (MAX_BLOCK_SIZE_GEN - nNewBlockSize);
+      
     }
 
     if (!MoneyRange(nMinFee))
