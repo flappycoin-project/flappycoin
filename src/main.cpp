@@ -611,14 +611,16 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
         // * If we are creating a transaction we allow transactions up to 250 bytes
         //   to be considered safe and assume they can likely make it into this section.
         if (nBytes < (mode == GMF_SEND ? 250 : (DEFAULT_BLOCK_PRIORITY_SIZE - 1000)))
-           nMinFee = (1 + (int64)nBytes * 15) * nBaseFee;
+        //   nMinFee = (1 + (int64)nBytes * 15) * nBaseFee;
+        nMinFee = 0;
     }
 
     // Flappycoin
     // To limit dust spam, add nBaseFee for each output less than DUST_SOFT_LIMIT
     BOOST_FOREACH(const CTxOut& txout, vout)
         if (txout.nValue < DUST_SOFT_LIMIT)
-            nMinFee += (1 + (int64)nBytes * 10) * nBaseFee;
+          //  nMinFee += (1 + (int64)nBytes * 10) * nBaseFee;
+          nMinFee = 0;
 
     // Raise the price as the block approaches full
     if (nBlockSize != 1 && nNewBlockSize >= MAX_BLOCK_SIZE_GEN/2)
