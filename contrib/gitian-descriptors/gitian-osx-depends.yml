@@ -14,7 +14,7 @@ remotes: []
 files:
 - "boost_1_55_0.tar.bz2"
 - "db-4.8.30.NC.tar.gz"
-- "miniupnpc-1.9.20140401.tar.gz"
+- "miniupnpc-1.9.tar.gz"
 - "openssl-1.0.1h.tar.gz"
 - "protobuf-2.5.0.tar.bz2"
 - "qrencode-3.4.3.tar.bz2"
@@ -103,7 +103,7 @@ script: |
   popd
 
   #libminiupnpc
-  SOURCE_FILE=${SOURCES_PATH}/miniupnpc-1.9.20140401.tar.gz
+  SOURCE_FILE=${SOURCES_PATH}/miniupnpc-1.9.tar.gz
   BUILD_DIR=${BUILD_BASE}/miniupnpc-1.9
 
   tar -C ${BUILD_BASE} -xf ${SOURCE_FILE}
