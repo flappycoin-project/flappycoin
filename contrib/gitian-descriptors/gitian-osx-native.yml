@@ -24,7 +24,7 @@ files:
 - "dyld-195.5.tar.gz"
 - "ld64-127.2.tar.gz"
 - "protobuf-2.5.0.tar.bz2"
-- "MacOSX10.7.sdk.tar.gz"
+- "MacOSX10.7.sdk.tar.xz"
 - "cdrkit-1.1.11.tar.gz"
 - "libdmg-hfsplus-v0.1.tar.gz"
 - "clang-llvm-3.2-x86-linux-ubuntu-12.04.tar.gz"
@@ -91,7 +91,7 @@ script: |
   mkdir -p ${NATIVEPREFIX}/lib
 
   mkdir -p SDKs
-  tar -C SDKs -xf ${SOURCES_PATH}/MacOSX10.7.sdk.tar.gz
+  tar -C SDKs -xf ${SOURCES_PATH}/MacOSX10.7.sdk.tar.xz
 
   #  Clang
   SOURCE_FILE=${SOURCES_PATH}/clang-llvm-3.2-x86-linux-ubuntu-12.04.tar.gz
