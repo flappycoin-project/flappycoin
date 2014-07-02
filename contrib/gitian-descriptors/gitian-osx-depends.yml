@@ -18,7 +18,7 @@ files:
 - "openssl-1.0.1h.tar.gz"
 - "protobuf-2.5.0.tar.bz2"
 - "qrencode-3.4.3.tar.bz2"
-- "MacOSX10.7.sdk.tar.gz"
+- "MacOSX10.7.sdk.tar.xz"
 - "osx-native-depends-r3.tar.gz"
 
 script: |
@@ -70,7 +70,7 @@ script: |
   mkdir -p ${BUILD_BASE}
 
   mkdir -p SDKs
-  tar -C SDKs -xf ${SOURCES_PATH}/MacOSX10.7.sdk.tar.gz
+  tar -C SDKs -xf ${SOURCES_PATH}/MacOSX10.7.sdk.tar.xz
 
   tar xf /home/ubuntu/build/osx-native-depends-r3.tar.gz
 
