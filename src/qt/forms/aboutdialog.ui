@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About Flappycoin</string>
+   <string>About FlappyCoin</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -114,8 +114,8 @@
         <cursorShape>IBeamCursor</cursorShape>
        </property>
        <property name="text">
-        <string notr="true">Copyright &amp;copy; 2009-YYYY The Bitcoin developers
-Copyright &amp;copy; 2011-YYYY FlappyCoin</string>
+        <string notr="true">Copyright &amp;copy; YYYY Bitcoin Developers
+Copyright &amp;copy; YYYY FlappyCoin Developers</string>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>
