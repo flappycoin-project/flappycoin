@@ -2,6 +2,7 @@ Flappycoin 3.2
 ====================
 
 Copyright (c) 2014 Bitcoin Developers
+
 Copyright (c) 2014 FlappyCoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
