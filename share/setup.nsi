@@ -52,7 +52,7 @@ CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.8.6.2
+VIProductVersion 3.2
 VIAddVersionKey ProductName FlappyCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
@@ -69,7 +69,7 @@ Section -Main SEC0000
     SetOverwrite on
     File ../release/flappycoin-qt.exe
     File /oname=COPYING.txt ../COPYING
-    File /oname=readme.txt ../doc/README_windows.txt
+    File /oname=README.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
     File ../src/flappycoind.exe
     SetOutPath $INSTDIR\src
