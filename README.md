@@ -4,7 +4,7 @@ Current version: 3.2
 
 DOMAIN: http://flappycoin.biz
 
-EXPLORER: http://altexplorer.net/chain/FlappyCoin
+EXPLORER: http://explorer.flappycoin.biz
 
 http://flappycoin.info - Old domain. Points to above domain but official domain is http://flappycoin.biz/
 
