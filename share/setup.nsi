@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 3.2
+!define VERSION 3.2.0.0
 !define COMPANY "FlappyCoin"
 !define URL http://flappycoin.biz/
 
@@ -52,7 +52,7 @@ CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 3.2
+VIProductVersion 3.2.0.0
 VIAddVersionKey ProductName FlappyCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
