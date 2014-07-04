@@ -1,4 +1,4 @@
-Flappycoin 
+FlappyCoin 
 ================================
 Current version: 3.2
 
