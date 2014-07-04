@@ -12,7 +12,7 @@ http://flappycoin.info - Old domain. Points to above domain but official domain 
 
 ![FlappyCoin](http://flappycoin.biz/flap.nsf/flapcoin_med.png)
 
-Copyright (c) 2009-2013 Bitcoin Developers
+Copyright (c) 2014 Bitcoin Developers
 
 Copyright (c) 2014 FlappyCoin Developers
 
