@@ -6,13 +6,13 @@ DOMAIN: http://flappycoin.biz
 
 EXPLORER: http://explorer.flappycoin.biz
 
-http://flappycoin.info - Old domain. Points to above domain but official domain is http://flappycoin.biz/
 
 ![FlappyCoin](http://flappycoin.biz/flap.nsf/flapcoin_med.png)
 
 Copyright (c) 2014 Bitcoin Developers
 
 Copyright (c) 2014 FlappyCoin Developers
+
 
 Specifications:
 ---------------
