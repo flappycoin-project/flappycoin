@@ -1,7 +1,5 @@
 Flappycoin 
 ================================
-FLAPPYCOIN FORKED SOURCE CODE. CHANGES BELOW.
-
 Current version: 3.2
 
 DOMAIN: http://flappycoin.biz
