@@ -1,6 +1,6 @@
 FlappyCoin 
 ================================
-Current version: 3.2
+Current version: 3.3
 
 DOMAIN: http://flappycoin.biz
 
