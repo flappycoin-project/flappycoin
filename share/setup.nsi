@@ -46,7 +46,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile flappycoin-3.2-win32-setup.exe
+OutFile flappycoin-3.3-win32-setup.exe
 InstallDir $PROGRAMFILES\FlappyCoin
 CRCCheck on
 XPStyle on
