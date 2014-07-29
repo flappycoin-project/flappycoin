@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 3.3.0.0
+!define VERSION 3.2.0.0
 !define COMPANY "FlappyCoin"
 !define URL http://flappycoin.biz/
 
@@ -46,13 +46,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile flappycoin-3.3-win32-setup.exe
+OutFile flappycoin-3.2-win32-setup.exe
 InstallDir $PROGRAMFILES\FlappyCoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 3.3.0.0
+VIProductVersion 3.2.0.0
 VIAddVersionKey ProductName FlappyCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
